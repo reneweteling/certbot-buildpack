@@ -26,5 +26,5 @@ echo "-----> Setting permissions"
 chmod a+x $CERTBOT_PATH
 
 echo "-----> Adding flynn to the sudowers file"
-echo '%flynn   ALL=(ALL:ALL) ALL' >> /etc/sudoers
+sudo echo '%flynn   ALL=(ALL:ALL) ALL' >> /etc/sudoers
 
