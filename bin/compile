@@ -26,5 +26,5 @@ echo "-----> Setting permissions"
 chmod a+x $CERTBOT_PATH
 
 echo "-----> Bootstrap it"
-$CERTBOT_PATH
+sudo $CERTBOT_PATH
 
