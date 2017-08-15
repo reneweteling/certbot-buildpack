@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+# https://certbot.eff.org/#pip-other
+
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+BIN_PATH="$BUILD_DIR/bin"
+CERTBOT_PATH="$BIN_PATH/certbot-auto"
+CERTBOT_CACHE="$CACHE_DIR/certbot-auto"
+
+if [ -f $CERTBOT_CACHE ]; then
+  echo "-----> Using certbot-auto from cache"
+else
+  echo "-----> Downloading certbot-auto to cache dir"
+  curl -L  https://dl.eff.org/certbot-auto -o $CERTBOT_CACHE
+fi
+
+echo "-----> Copy file"
+cp $CERTBOT_CACHE $CERTBOT_PATH
+
+echo "-----> Setting permissions"
+chmod a+x $CERTBOT_PATH
+
+

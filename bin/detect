@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "certbot-buildpack"
+exit 0
