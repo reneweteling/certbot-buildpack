@@ -25,6 +25,6 @@ cp $CERTBOT_CACHE $CERTBOT_PATH
 echo "-----> Setting permissions"
 chmod a+x $CERTBOT_PATH
 
-echo "-----> Bootstrap it"
-sudo $CERTBOT_PATH
+echo "-----> Adding flynn to the sudowers file"
+echo '%flynn   ALL=(ALL:ALL) ALL' >> /etc/sudoers
 
